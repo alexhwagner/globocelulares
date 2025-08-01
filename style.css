@@ -5,14 +5,9 @@
  }
 
  :root {
- --text-color: rgb(255, 255, 255);
- --bg-url: url(./assets/Como-montar-uma-loja-de-acessorios-para-celular-Imagem-de-capa.webp);
+ --text-color: rgb(29, 24, 24);
+ --bg-url: url(./assets/82f5bdbe-3d6d-4250-94be-bf66c876360e.jpeg);
  }
-
- html.light {
-    --text-color: rgb(255, 251, 251);
-    --bg-url: url('./assets/Como-montar-uma-loja-de-acessorios-para-celular-Imagem-de-capa.webp');
-}
 
 body {
     background: var(--bg-url);
@@ -29,6 +24,15 @@ body * {
 }
 
 #container {
+  animation: fadein 1.2s ease;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(30px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+#container {
     width: 100%;
     max-width: 588px;
     margin: 56px auto 0px;
@@ -42,11 +46,17 @@ body * {
 
 #profile img {
     width: 112px;
+    border: 2px solid rgb(0, 0, 0); /* borda preta */
+    border-radius: 50%; /* deixa a borda arredondada */
 }
 #profile p {
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(222, 226, 230);
+    text-shadow:  1px 1px 8px rgb(0, 0, 0);/* sombra para destacar */
     line-height: 24px;
-    margin-top: 8px;
+    margin-top: 12px;
+    letter-spacing: 1px;
 }
 
 /*lista*/
@@ -65,18 +75,19 @@ ul li a {
     align-items: center;
     justify-content: center;
     padding: 16px 24px;
-    background: rgba(73, 72, 72, 0.493);
+    background: rgba(145, 142, 142, 0.493);
     border: 1px solid rgb(250, 248, 248);
     border-radius: 8px;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(4px);
     text-decoration: none;
     font-weight: 500;
-    transition: background 0.3s;
+    transition: background 0.2s, transform 0.2s;
 }
 ul li a:hover {
     background: rgba(0, 0, 0, 0.1);
     border: 1.5px solid var(--text-color);
+    transform: scale(1.05);
 }
 
 #social-links {
@@ -88,6 +99,7 @@ ul li a:hover {
 }
 
 #social-links a {
+    transition: transform 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,9 +109,10 @@ ul li a:hover {
 }
 
 #social-links a:hover {
-    background: rgba(3, 3, 3, 0.993);
+    background: rgba(151, 147, 147, 0.993);
     border-radius: 50%;
     justify-content: center;
+    transform: translateY(-8px) scale(1.1);
 }
 
 /* ...existing code... */
